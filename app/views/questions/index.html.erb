@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="col-md-6 offset-2">
+  <h1>Questions</h1>
+    <%= link_to "Alphabet Sort", questions_path(sort: "title"), class: "btn btn-primary" %>
+    <%= link_to "Priority Sort", questions_path(position: "position"), class: "btn btn-primary" %>
+  <div id="questions" class="list-group" data-url="<%= sort_questions_path %>">
+    <% @questions.each do |question| %>
+    <%= link_to question, class: "list-group-item mt-5 ", id: dom_id(question) do%> 
+      <p class="card-title "><%= question.title %></p>
+    <% end %>
+  <% end %>
+</div>
+</div>
+<%= link_to 'New Question', new_question_path %>
+</div>
+
+
+<style type="">a:link { 
+text-decoration:none;</style>
+
